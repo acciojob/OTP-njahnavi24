@@ -14,9 +14,7 @@ codes.forEach((code, index) =>{
 			if (index > 0) {
                 codes[index - 1].value = "";
                 codes[index - 1].focus();
-            } else {
-                code.value = "";
-            }
+            } 
         }
     });
 });
