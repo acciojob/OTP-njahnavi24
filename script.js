@@ -8,10 +8,15 @@ codes.forEach((code, index) =>{
         }
     });
 
-    code.addEventListener("keydown", (e) =>{
-		if (e.key === "Backspace" && !code.value && index > 0){
-			codes[index - 1].focus();
-            codes[index - 1].value = "";
+    code.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace") {
+            e.preventDefault();
+			if (index > 0) {
+                codes[index - 1].value = "";
+                codes[index - 1].focus();
+            } else {
+                code.value = "";
+            }
         }
     });
 });
